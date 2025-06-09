@@ -1,0 +1,28 @@
+{% extends 'layout.html' %} {% block content %}
+<h1>Top 10 recipies</h1>
+
+<table class="table table-sm table-bordered">
+  <thead>
+    <tr>
+      <th>Postion</th>
+      <th>Recipie name</th>
+      <th>Num favourites</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for recipe in recipies %}
+    <tr>
+      <td>{{ loop.index }}</th>
+
+      <td><a href="/view.html?r_id={{ recipe['r_id'] }}">{{ recipe['r_name'] }}</a></td>
+      <td>{{ recipe['num_favourites'] }}</td>
+
+    </tr>
+
+
+
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

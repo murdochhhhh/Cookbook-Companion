@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h1>Welcome {{ value }}!</h1>
+
+<form action="/prompt_two_fa.html" method="post" class="box">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+
+  <p>Enter otp from your authenticator app</p>
+  <div class="input__wrapper">
+
+    <input type="text" name="twofa_code" id="twofa_code" class="input__field" required/>
+  </div>
+  <div class="input__wrapper">
+    <input type="submit" class="btn" value="Submit" />
+  </div>
+</form>
+<hr/>
+{% endblock %}

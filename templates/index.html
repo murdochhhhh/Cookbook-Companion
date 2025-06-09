@@ -1,0 +1,47 @@
+{% extends 'layout.html' %} {% block content %}
+<meta
+  http-equiv="Content-Security-Policy"
+  content="
+  base-uri 'self';
+  default-src 'self';
+  img-src 'self' data:;
+  script-src 'self';
+  style-src 'self' 'unsafe-inline';
+  media-src 'self';
+  font-src 'self';
+  connect-src 'self';
+  object-src 'self';
+  worker-src 'self';
+  frame-src 'none';
+  form-action 'self';
+  manifest-src 'self';
+"
+/>
+<h1 style="font-size: 400%">Login</h1>
+<form action="/" method="post" class="box">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+  <div class="input__wrapper">
+    <input
+      type="text"
+      name="username"
+      id="username"
+      placeholder="Username"
+      class="input__field"
+      required
+    />
+  </div>
+  <div class="input__wrapper">
+    <input
+      type="password"
+      name="password"
+      id="password"
+      placeholder="Password"
+      class="input__field"
+      required
+    />
+  </div>
+  <div class="input__wrapper">
+    <input type="submit" class="btn" value="Log In" />
+  </div>
+</form>
+{% endblock %}

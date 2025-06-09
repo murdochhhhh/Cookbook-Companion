@@ -1,0 +1,50 @@
+{% extends 'layout.html' %} {% block content %}
+<div class="col-md-3">
+  <div
+    class="card w-80"
+    style="background-color: rgb(241, 227, 179); margin-bottom: 20px"
+  >
+    <div class="card-body">
+      <h2 style="font-size: 300%">{{ recipe['r_name'] }}</h2>
+      {% if recipe['f_id'] %} recipe favourited {% else %}
+      <a class="btn" href="/favourite.html?r_id={{ recipe['r_id'] }}"
+        >favourite</a
+      >
+      {% endif %}
+      <p>Number of favourites : {{ num_favourites }}</p>
+    </div>
+  </div>
+</div>
+<!-- see font awesome for img -->
+<div class="">
+  <div class="row">
+  <div class="col-md-6">
+    <div class="card w-100" style="background-color: rgb(241, 227, 179)">
+      <div class="card-body">
+      <div style="font-size: 150%" class="card-title">Recipe info:</div>
+      <p>Difficulty level (1-5) : {{ recipe['r_difficulty'] }}</p>
+      <p>Region of cuisine : {{ recipe['r_region'] }}</p>
+      <p>Cooking time (minutes) : {{ recipe['r_time'] }}</p>
+      <p>description :{{ recipe['r_description'] }}</p>
+    </div>
+  </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-6">
+      <div class="card w-100" style="background-color: rgb(241, 227, 179)">
+        <div class="card-body">
+          <div style="font-size: 150%" class="card-title">Recipe info:</div>
+          <p>Ingredients : <br>
+            {{ recipe['r_ingredients'] }}</p>
+          <p>Steps : <br> 
+           {{ recipe['r_steps'] }}</p>
+        </div>
+      </div>
+    </div>
+</div>
+</div>
+
+
+        {% endblock %}
+      

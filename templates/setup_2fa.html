@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h1>Welcome {{ value }}!</h1>
+<h2>Enable 2FA {{ value }}!</h2>
+<h3>Scan this QR Code with Google Authenticator</h3>
+
+<img src="data:image/png;base64,{{ qr_code_b64 }}">
+<form action="/setup_2fa.html" method="post" class="box">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+
+  <div class="input__wrapper">
+
+    <input type="text" name="twofa_code" id="twofa_code" class="input__field" required/>
+  </div>
+  <div class="input__wrapper">
+    <input type="submit" class="btn" value="Submit" />
+  </div>
+</form>
+<hr/>
+{% endblock %}

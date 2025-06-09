@@ -1,0 +1,97 @@
+{% extends 'layout.html' %} {% block content %}
+<h1>Create new recipe</h1>
+<div class="card w-100">
+  <div class="card-body">
+    <form
+      action="/create.html"
+      method="POST"
+      class="box"
+      style="margin-left: 30px"
+    >
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+      <div class="input__wrapper">
+        <label for="name">Recipe name:</label>
+        <input
+          id="name"
+          type="text"
+          name="name"
+          maxlength="32"
+          required
+          class="username input_field input_field_username"
+          pattern="[a-zA-Z0-9._-]{3,32}"
+          placeholder="recipe name"
+        />
+      </div>
+      <div class="input__wrapper">
+        <input
+          id="cooktime"
+          type="number"
+          name="cooktime"
+          maxlength="32"
+          required
+          class="password input_field input_field_password"
+          pattern=".{8,32}"
+          placeholder="30"
+        />
+      </div>
+      <div class="input__wrapper">
+        <input
+          id="diff"
+          type="number"
+          name="diff"
+          required
+          class="dob input_field input_field_dob"
+          placeholder="difficulty"
+        />
+      </div>
+      <div class="input__wrapper">
+        <input
+          id="region"
+          type="text"
+          name="region"
+          required
+          class="dob input_field input_field_dob"
+          placeholder="region"
+        />
+      </div>
+      <div class="input__wrapper">
+        <textarea
+          id="desc"
+          type="text"
+          name="desc"
+          required
+          class="dob input_field input_field_dob"
+          placeholder="description"
+        >
+        </textarea>
+      </div>
+
+      <div class="input__wrapper">
+        <textarea
+          id="ingredients"
+          type="text"
+          name="ingredients"
+          required
+          class="dob input_field input_field_dob"
+          placeholder="Ingredients"
+        >
+        </textarea>
+      </div>
+      <div class="input__wrapper">
+        <textarea
+          id="steps"
+          type="text"
+          name="steps"
+          required
+          class="dob input_field input_field_dob"
+          placeholder="Steps"
+        >
+        </textarea>
+      </div>
+      <div class="input__wrapper">
+        <button type="submit" class="btn">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'layout.html' %} {% block content %}
+<div class="col-md-6">
+  <div class="card w-100" style="background-color: rgb(241, 227, 179)">
+    <div class="card-body">
+      <div style="font-size: 150%" class="card-title">Search for recipes:</div>
+      <form action="/search.html" method="POST" class="box">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+        <div class="input__wrapper">
+          <input
+          style="border: black solid 2px; border-radius: 10px; padding-left: 4px;"
+            id="query"
+            type="text"
+            name="query"
+            maxlength="32"
+            required
+            class="username input_field input_field_username"
+            pattern="[a-zA-Z0-9._-]{3,32}"
+            placeholder="enter search query"
+          />
+        </div>
+        <div class="input__wrapper">
+          <button type="submit" class="btn btn-light">Submit</button>
+        </div>
+      </form>
+      </div>
+      </div>
+      </div>
+
+      {% if recipies %}
+
+      <div class="col-md-6" style="margin-top: 10px;">
+      <div class="card w-100" style="background-color: rgb(241, 227, 179)">
+    <div class="card-body">
+      <div style="font-size: 150%" class="card-title">Search results:</div>
+      <ul>
+        {% for r in recipies %}
+        <li><a href="/view.html?r_id={{ r['r_id'] }}">{{ r['r_name'] }}</a></li>
+        {% endfor %}
+      </ul>
+
+      {% endif %} {% endblock %}
+      </div>
+    </div>
+  </div>
+</div>

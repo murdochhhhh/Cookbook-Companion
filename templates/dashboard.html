@@ -1,0 +1,93 @@
+{% extends 'layout.html' %} {% block content %}
+<div class="col-md-4">
+  <div
+    class="card w-80"
+    style="background-color: rgb(241, 227, 179); margin-bottom: 20px"
+  >
+    <div class="card-body">
+      <h2 style="text-align: left; margin-bottom: 10px">Recipe dashboard</h2>
+    </div>
+  </div>
+</div>
+<div class="">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card w-100" style="background-color: rgb(241, 227, 179)">
+        <div class="card-body">
+          <div style="font-size: 150%" class="card-title">
+            Favourite recipies
+          </div>
+          {% if favourites %}
+          <ul>
+            {% for r in favourites %}
+            <li>
+              <form
+                class="form form-inline"
+                action="/remove_favourite.html"
+                method="post"
+              >
+                <a
+                  class="link-success link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
+                  href="/view.html?r_id={{ r['r_id'] }}"
+                  >{{ r['r_name'] }}</a
+                >
+                <input
+                  type="hidden"
+                  name="csrf_token"
+                  value="{{ csrf_token() }}"
+                />
+
+                <input type="hidden" name="f_id" value="{{ r['f_id'] }}" />
+                <input
+                  class="btn btn-sm btn-danger"
+                  type="submit"
+                  value="Remove"
+                />
+              </form>
+            </li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card w-100" style="background-color: rgb(241, 227, 179)">
+        <div class="card-body">
+          <div style="font-size: 150%" class="card-title">Your recipies</div>
+          <ul>
+            {% for r in recipies %}
+            <li>
+              <form
+                class="form form-inline"
+                action="/delete_recipe.html"
+                method="post"
+              >
+                <a
+                  class="link-success link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
+                  href="/view.html?r_id={{ r['r_id'] }}"
+                  >{{ r['r_name'] }}</a
+                >
+                <input
+                  type="hidden"
+                  name="csrf_token"
+                  value="{{ csrf_token() }}"
+                />
+
+                <input type="hidden" name="r_id" value="{{ r['r_id'] }}" />
+                <input
+                  class="btn btn-sm btn-danger"
+                  type="submit"
+                  value="Delete"
+                />
+              </form>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
