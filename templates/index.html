@@ -17,31 +17,41 @@
   manifest-src 'self';
 "
 />
-<h1 style="font-size: 400%">Login</h1>
-<form action="/" method="post" class="box">
-  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
-  <div class="input__wrapper">
-    <input
-      type="text"
-      name="username"
-      id="username"
-      placeholder="Username"
-      class="input__field"
-      required
-    />
+<div class="">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card w-100" style="background-color: rgb(241, 227, 179)">
+        <div class="card-body">
+          <div style="font-size: 400%" class="card-title">Login :</div>
+          <form action="/" method="post" class="box">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+            <div class="input__wrapper">
+              <input
+                type="text"
+                name="username"
+                id="username"
+                placeholder="Username"
+                class="input__field"
+                required
+              />
+            </div>
+            <div class="input__wrapper">
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Password"
+                class="input__field"
+                required
+              />
+            </div>
+            <div class="input__wrapper">
+              <input type="submit" class="btn btn-success" value="Log In" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="input__wrapper">
-    <input
-      type="password"
-      name="password"
-      id="password"
-      placeholder="Password"
-      class="input__field"
-      required
-    />
-  </div>
-  <div class="input__wrapper">
-    <input type="submit" class="btn" value="Log In" />
-  </div>
-</form>
+</div>
 {% endblock %}

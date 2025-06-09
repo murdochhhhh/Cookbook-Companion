@@ -1,13 +1,14 @@
 {% extends 'layout.html' %} {% block content %}
+<div class="">
 <div class="col-md-6">
   <div class="card w-100" style="background-color: rgb(241, 227, 179)">
     <div class="card-body">
-      <div style="font-size: 150%" class="card-title">Search for recipes:</div>
+      <div style="font-size: 200%" class="card-title">Search for recipes:</div>
       <form action="/search.html" method="POST" class="box">
         <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
         <div class="input__wrapper">
           <input
-          style="border: black solid 2px; border-radius: 10px; padding-left: 4px;"
+            style="border: black solid 2px; border-radius: 10px; padding: 5px"
             id="query"
             type="text"
             name="query"
@@ -19,27 +20,35 @@
           />
         </div>
         <div class="input__wrapper">
-          <button type="submit" class="btn btn-light">Submit</button>
+          <button type="submit" class="btn btn-success">Submit</button>
         </div>
       </form>
-      </div>
-      </div>
-      </div>
+    </div>
+  </div>
+  </div>
 
-      {% if recipies %}
+    {% if recipies %}
 
-      <div class="col-md-6" style="margin-top: 10px;">
+    <div class="col-md-6" style="margin-top: 10px">
       <div class="card w-100" style="background-color: rgb(241, 227, 179)">
-    <div class="card-body">
-      <div style="font-size: 150%" class="card-title">Search results:</div>
-      <ul>
-        {% for r in recipies %}
-        <li><a href="/view.html?r_id={{ r['r_id'] }}">{{ r['r_name'] }}</a></li>
-        {% endfor %}
-      </ul>
+        <div class="card-body">
+          <div style="font-size: 150%" class="card-title">Search results:</div>
+          <ul>
+            {% for r in recipies %}
+            <li>
+              <a
+                class="link-success link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
+                href="/view.html?r_id={{ r['r_id'] }}"
+                >{{ r['r_name'] }}</a
+              >
+            </li>
+            {% endfor %}
+          </ul>
 
-      {% endif %} {% endblock %}
+          {% endif %} {% endblock %}
+        </div>
       </div>
     </div>
   </div>
+</div>
 </div>

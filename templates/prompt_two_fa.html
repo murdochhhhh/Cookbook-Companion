@@ -1,18 +1,27 @@
 {% extends 'layout.html' %}
 {% block content %}
-<h1>Welcome {{ value }}!</h1>
-
 <form action="/prompt_two_fa.html" method="post" class="box">
   <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
 
-  <p>Enter otp from your authenticator app</p>
+
+  <div class="">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card w-100" style="background-color: rgb(241, 227, 179)">
+        <div class="card-body">
+          <div style="font-size: 200%" class="card-title">Enter otp from your authenticator app :</div>
+
   <div class="input__wrapper">
 
     <input type="text" name="twofa_code" id="twofa_code" class="input__field" required/>
   </div>
   <div class="input__wrapper">
-    <input type="submit" class="btn" value="Submit" />
+    <input type="submit" class="btn btn-success" value="Submit" />
   </div>
 </form>
-<hr/>
+</div>
+</div>
+</div>
+</div>
+</div>
 {% endblock %}

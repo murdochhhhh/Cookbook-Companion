@@ -1,12 +1,16 @@
 {% extends 'layout.html' %} {% block content %}
-<h1>Top 10 recipies</h1>
 
-<table class="table table-sm table-bordered">
+  <div class="card w-80" style="background-color: rgb(241, 227, 179); margin-bottom: 20px">
+    <div class="card-body">
+      <div style="font-size: 200%" class="card-title">
+            Top 10 Recipes
+          </div>
+<table class="table table-sm table-bordered table-hover table-warning border-success">
   <thead>
     <tr>
       <th>Postion</th>
-      <th>Recipie name</th>
-      <th>Num favourites</th>
+      <th>Recipe name</th>
+      <th>Number of favourites</th>
     </tr>
   </thead>
   <tbody>
@@ -14,7 +18,7 @@
     <tr>
       <td>{{ loop.index }}</th>
 
-      <td><a href="/view.html?r_id={{ recipe['r_id'] }}">{{ recipe['r_name'] }}</a></td>
+      <td><a class="link-success link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="/view.html?r_id={{ recipe['r_id'] }}">{{ recipe['r_name'] }}</a></td>
       <td>{{ recipe['num_favourites'] }}</td>
 
     </tr>
@@ -24,5 +28,7 @@
     {% endfor %}
   </tbody>
 </table>
+</div>
+</div>
 
 {% endblock %}

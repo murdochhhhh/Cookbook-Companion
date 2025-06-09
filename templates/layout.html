@@ -22,11 +22,12 @@
             <ul class="topnav" style="padding-top: 10px;">
                 {% if state %}
                 <li><a href="/dashboard.html">Dashboard</a></li>
+                <li><a href="/topten.html">Popular</a></li>
                 <li><a href="/create.html">Create</a></li>
                 <li><a href="/search.html">Search</a></li>
                     <li><a href="/logout">Logout</a></li>
                     {% if not session ['two_fa'] %}
-                        <li><a href="/setup_2fa.html">Setup 2fa</a></li>
+                        <li><a href="/setup_2fa.html">2fa</a></li>
                     {% endif %}
 
 

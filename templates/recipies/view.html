@@ -18,33 +18,33 @@
 <!-- see font awesome for img -->
 <div class="">
   <div class="row">
-  <div class="col-md-6">
-    <div class="card w-100" style="background-color: rgb(241, 227, 179)">
-      <div class="card-body">
-      <div style="font-size: 150%" class="card-title">Recipe info:</div>
-      <p>Difficulty level (1-5) : {{ recipe['r_difficulty'] }}</p>
-      <p>Region of cuisine : {{ recipe['r_region'] }}</p>
-      <p>Cooking time (minutes) : {{ recipe['r_time'] }}</p>
-      <p>description :{{ recipe['r_description'] }}</p>
-    </div>
-  </div>
-    </div>
-  </div>
-</div>
-<div class="col-md-6">
+    <div class="col-md-6">
       <div class="card w-100" style="background-color: rgb(241, 227, 179)">
         <div class="card-body">
           <div style="font-size: 150%" class="card-title">Recipe info:</div>
-          <p>Ingredients : <br>
-            {{ recipe['r_ingredients'] }}</p>
-          <p>Steps : <br> 
-           {{ recipe['r_steps'] }}</p>
+          <p>Difficulty level (1-5) : {{ recipe['r_difficulty'] }}</p>
+          <p>Region of cuisine : {{ recipe['r_region'] }}</p>
+          <p>Cooking time (minutes) : {{ recipe['r_time'] }}</p>
+          <p>description :{{ recipe['r_description'] }}</p>
         </div>
       </div>
     </div>
-</div>
+    <div class="col-md-6">
+      <div class="card w-100" style="background-color: rgb(241, 227, 179)">
+        <div class="card-body">
+          <div style="font-size: 150%" class="card-title">Recipe info:</div>
+          <p>
+            Ingredients : <br />
+            {{ recipe['r_ingredients'] }}
+          </p>
+          <p>
+            Steps : <br />
+            {{ recipe['r_steps'] }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-
-        {% endblock %}
-      
+{% endblock %}

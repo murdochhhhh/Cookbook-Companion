@@ -1,6 +1,15 @@
 {% extends 'layout.html' %} {% block content %}
-<h1>Create new recipe</h1>
-<div class="card w-100">
+<div class="col-md-6">
+  <div
+    class="card w-100"
+    style="background-color: rgb(241, 227, 179); margin-bottom: 10px"
+  >
+    <div class="card-body">
+      <h1 style="margin-left: 20px">Create new recipe :</h1>
+    </div>
+  </div>
+</div>
+<div class="card w-100" style="background-color: rgb(241, 227, 179)">
   <div class="card-body">
     <form
       action="/create.html"
@@ -10,8 +19,14 @@
     >
       <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
       <div class="input__wrapper">
-        <label for="name">Recipe name:</label>
+        <label for="name">Recipe name : </label>
         <input
+          style="
+            margin-left: 30px;
+            border: black solid 2px;
+            border-radius: 10px;
+            padding: 5px;
+          "
           id="name"
           type="text"
           name="name"
@@ -23,7 +38,14 @@
         />
       </div>
       <div class="input__wrapper">
+        <label for="name">Cook time : </label>
         <input
+          style="
+            margin-left: 60px;
+            border: black solid 2px;
+            border-radius: 10px;
+            padding: 5px;
+          "
           id="cooktime"
           type="number"
           name="cooktime"
@@ -35,7 +57,14 @@
         />
       </div>
       <div class="input__wrapper">
+        <label for="name">Difficulty (1-5) : </label>
         <input
+          style="
+            margin-left: 16px;
+            border: black solid 2px;
+            border-radius: 10px;
+            padding: 5px;
+          "
           id="diff"
           type="number"
           name="diff"
@@ -45,7 +74,14 @@
         />
       </div>
       <div class="input__wrapper">
+        <label for="name">Region : </label>
         <input
+          style="
+            margin-left: 94px;
+            border: black solid 2px;
+            border-radius: 10px;
+            padding: 5px;
+          "
           id="region"
           type="text"
           name="region"
@@ -55,7 +91,14 @@
         />
       </div>
       <div class="input__wrapper">
+        <label for="name">Description : </label>
         <textarea
+          style="
+            margin-left: 47px;
+            border: black solid 2px;
+            border-radius: 10px;
+            padding: 5px;
+          "
           id="desc"
           type="text"
           name="desc"
@@ -67,7 +110,14 @@
       </div>
 
       <div class="input__wrapper">
+        <label for="name">Ingredients : </label>
         <textarea
+          style="
+            margin-left: 50px;
+            border: black solid 2px;
+            border-radius: 10px;
+            padding: 5px;
+          "
           id="ingredients"
           type="text"
           name="ingredients"
@@ -78,7 +128,14 @@
         </textarea>
       </div>
       <div class="input__wrapper">
+        <label for="name">Steps : </label>
         <textarea
+          style="
+            margin-left: 106px;
+            border: black solid 2px;
+            border-radius: 10px;
+            padding: 5px;
+          "
           id="steps"
           type="text"
           name="steps"
@@ -89,7 +146,9 @@
         </textarea>
       </div>
       <div class="input__wrapper">
-        <button type="submit" class="btn">Submit</button>
+        <button type="submit" class="btn btn-success" style="margin-top: 20px">
+          Submit
+        </button>
       </div>
     </form>
   </div>

@@ -93,9 +93,7 @@ form {
 }
 label,
 .input__field:focus ~ .input__label {
-  position: absolute;
   top: 0.075rem;
-  padding: 1 0.05rem;
   display: block;
   font-size: 1.5rem;
   left: 0.5rem;
@@ -158,4 +156,8 @@ label,
 }
 .placeholder {
   font-size: 200%;
+}
+.input {
+  border: black solid 2px;
+  border-radius: 10px;
 }
