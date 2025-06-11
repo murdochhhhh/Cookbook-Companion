@@ -3,8 +3,8 @@
   "short_name": "cookcomp",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#000",
-  "theme_color": "#000",
+  "background_color": "#F1E3B3",
+  "theme_color": "#F1E3B3",
   "orientation": "portrait-primary",
   "icons": [
     {
