@@ -5,3 +5,8 @@ Flask-WTF
 Flask-Limiter
 qrcode
 pyotp
+bcrypt
+base64
+BytesIO
+io
+os
