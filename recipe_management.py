@@ -153,7 +153,7 @@ def count_favourites(r_id):
     con = sql.connect("database_files/database.db")
     con.row_factory=sql.Row
     cur = con.cursor()
-    data = cur.execute("SELECT COUNT (favourites.f_id) AS num_favourites FROM favourites WHERE favourites.r_id = ?", (r_id)).fetchone()
+    data = cur.execute("SELECT COUNT (favourites.f_id) AS num_favourites FROM favourites WHERE favourites.r_id = ?", (r_id,)).fetchone()
     con.close()
     return data[0]
 
@@ -173,7 +173,7 @@ def delete_recipe(r_id, user_id):
     if recipe:
         cur.execute("DELETE FROM recipies WHERE r_id = ? AND user_id = ?", (r_id,user_id))
         con.commit()
-        cur.execute("DELETE FROM favourites WHERE r_id = ?", (r_id))
+        cur.execute("DELETE FROM favourites WHERE r_id = ?", (r_id,))
         con.commit()
     con.close()  
 
